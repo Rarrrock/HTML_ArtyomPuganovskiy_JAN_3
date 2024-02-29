@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .block_A {
+            grid-area: aaa;
+        }
+        .block_B {
+            grid-area: bbb;
+        }
+        .block_C {
+            grid-area: ccc;
+        }
+        .block_D {
+            grid-area: ddd;
+        }
+        .block_E {
+            grid-area: eee;
+        }
+        .block_F {
+            grid-area: fff;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-areas:
+            "aaa aaa aaa aaa"
+            "bbb bbb bbb fff"
+            "ccc ddd eee fff";
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-gap: 1vh;
+        }
+
+        .block_A, .block_B, .block_C, .block_D, .block_E, .block_F {
+            background-color: cadetblue;
+        }
+
+        @media screen and (min-width: 300px) and (max-width: 500px){
+            body {
+                grid-template-areas:
+                "aaa aaa aaa"
+                "bbb bbb bbb"
+                "ccc ddd eee"
+                "fff fff fff";
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 3fr 1fr 1fr;
+                grid-gap: 1vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="block_A"><span>AAA</span></div>
+    <div class="block_B"><span>BBB</span></div>
+    <div class="block_C"><span>CCC</span></div>
+    <div class="block_D"><span>DDD</span></div>
+    <div class="block_E"><span>EEE</span></div>
+    <div class="block_F"><span>FFF</span></div>
+</body>
+</html>

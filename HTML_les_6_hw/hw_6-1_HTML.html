@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        header {
+            grid-area: header;
+        }
+
+        .left {
+            grid-area: art-1;
+        }
+
+        .right {
+            grid-area: art-2;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: grid;
+            grid-template-areas:
+            "header header"
+            "art-1 art-2";
+            grid-template-columns: 4fr 1fr;
+            grid-template-rows: 30vh 70vh;
+            grid-gap: 1vh;
+        }
+
+        header, .left, .right {
+            background-color: cadetblue;
+        }
+        
+        @media screen and (min-width: 300px) and (max-width: 500px){
+            body {
+                grid-template-areas:
+                "header"
+                "art-1"
+                "art-2";
+                grid-template-columns: 100%;
+                grid-template-rows: 15vh 70vh 15vh;
+                grid-gap: 1vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header><span>Header</span></header>
+    <article class="left"><span>Left</span></article>
+    <article class="right"><span>Right</span></article>
+</body>
+</html>
